@@ -1,6 +1,5 @@
 package card;
 
-import java.util.Random;
 
 import app.ForgotPassword;
 import app.Login;
@@ -16,23 +15,22 @@ public class Account {
 
 	public static String generateIBAN() {
 		String iban = "RO";
-		Random rand = new Random();
 		int nr;
 		do {
-			nr = rand.nextInt() % 100;
+			nr = ForgotPassword.rand.nextInt() % 100;
 		} while (nr <= 0 || ForgotPassword.digits(nr) != 2);
 
 		iban += String.valueOf(nr);
 		iban += " REVL 251V ";
 
 		do {
-			nr = rand.nextInt() % 10000;
+			nr = ForgotPassword.rand.nextInt() % 10000;
 		} while (nr <= 0 || ForgotPassword.digits(nr) != 4);
 		iban += String.valueOf(nr);
 
 		iban += " ";
 		do {
-			nr = rand.nextInt() % 10000;
+			nr = ForgotPassword.rand.nextInt() % 10000;
 		} while (nr <= 0 || ForgotPassword.digits(nr) != 4);
 		iban += String.valueOf(nr);
 		iban += " 2510";

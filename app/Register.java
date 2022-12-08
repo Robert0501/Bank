@@ -34,6 +34,7 @@ public class Register {
 
 	public void checkPersonalData() {
 		RegisterInterface.personalDataPanelNextButton.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (RegisterInterface.firstNameIn.getText().equals("")) {
 					JOptionPane.showMessageDialog(RegisterInterface.personalDataPanel, "Please enter your First Name");
@@ -56,7 +57,7 @@ public class Register {
 		});
 
 		RegisterInterface.personalDataPanelBackButton.addMouseListener(new MouseAdapter() {
-
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				LoginInterface.frame.setTitle("Login");
 				LoginInterface.loginPanel.setVisible(true);
@@ -68,6 +69,7 @@ public class Register {
 
 	public void checkAddressData() {
 		RegisterInterface.addressPanelNextButton.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 
 				if (RegisterInterface.countryIn.getText().equals("")) {
@@ -87,6 +89,7 @@ public class Register {
 		});
 
 		RegisterInterface.addressPanelBackButton.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				RegisterInterface.addressPanel.setVisible(false);
 				RegisterInterface.personalDataPanel.setVisible(true);
@@ -97,6 +100,7 @@ public class Register {
 
 	public void checkBirthdayData() {
 		RegisterInterface.birthdayPanelNextButton.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 
 				if (RegisterInterface.dayComboBox.getSelectedItem().equals("Day")) {
@@ -166,13 +170,7 @@ public class Register {
 					LocalDate birthday = LocalDate.parse(dateOfBirth.toString());
 					LocalDate today = LocalDate.now();
 					Period p = Period.between(birthday, today);
-					if (!checkCnp(RegisterInterface.dayComboBox.getSelectedItem().toString(),
-							RegisterInterface.monthComboBox.getSelectedItem().toString(),
-							RegisterInterface.yearComboBox.getSelectedItem().toString(), gen,
-							RegisterInterface.cnpIn.getText())) {
-						JOptionPane.showMessageDialog(RegisterInterface.birthdayPanel,
-								"CNP and birthday data doesn't match");
-					} else if (p.getYears() >= 18) {
+					if (p.getYears() >= 18) {
 						RegisterInterface.birthdayPanel.setVisible(false);
 						RegisterInterface.loginDataPanel.setVisible(true);
 					} else {
@@ -187,6 +185,7 @@ public class Register {
 		});
 
 		RegisterInterface.birthdayPanelBackButton.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				RegisterInterface.birthdayPanel.setVisible(false);
 				RegisterInterface.addressPanel.setVisible(true);
@@ -196,6 +195,7 @@ public class Register {
 
 	public void checkLoginData() {
 		RegisterInterface.loginDataNextButton.addMouseListener(new MouseAdapter() {
+			@Override
 			@SuppressWarnings("deprecation")
 			public void mouseClicked(MouseEvent e) {
 
@@ -267,61 +267,5 @@ public class Register {
 		});
 	}
 
-	private boolean checkCnp(String zi, String luna, String an, String gender, String cnp) {
-		int anInteger = Integer.valueOf(an);
-		String dayDigits = cnp.charAt(5) + "" + cnp.charAt(6);
-		String monthDigits = cnp.charAt(3) + "" + cnp.charAt(4);
-		String cnpanDigits = cnp.charAt(1) + "" + cnp.charAt(2);
-		String insertAnDigits = an.charAt(2) + "" + an.charAt(3);
-		String month = "";
-		switch (luna) {
-		case "January":
-			month = "01";
-			break;
-		case "February":
-			month = "02";
-			break;
-		case "March":
-			month = "03";
-			break;
-		case "April":
-			month = "04";
-			break;
-		case "May":
-			month = "05";
-			break;
-		case "June":
-			month = "06";
-			break;
-		case "July":
-			month = "07";
-			break;
-		case "August":
-			month = "08";
-			break;
-		case "September":
-			month = "09";
-			break;
-		case "October":
-			month = "10";
-			break;
-		case "November":
-			month = "11";
-			break;
-		case "December":
-			month = "12";
-			break;
-		}
-
-		if ((anInteger < 2000 && gender.equals("M") && cnp.charAt(0) != '1')
-				|| (anInteger < 2000 && gender.equals("F") && cnp.charAt(0) != '2')
-				|| (anInteger >= 2000 && gender.equals("M") && cnp.charAt(0) != '5')
-				|| (anInteger >= 2000 && gender.equals("F") && cnp.charAt(0) != '6') || (!dayDigits.equals(zi))
-				|| (!monthDigits.equals(month)) || (!cnpanDigits.equals(insertAnDigits))) {
-			return false;
-		} else {
-			return true;
-		}
-	}
-
+	
 }

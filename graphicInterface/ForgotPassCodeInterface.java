@@ -12,16 +12,16 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class ForgotPassCodeInterface {
-	public static JPanel forgotPassCodePanel = new JPanel();
+	public static final JPanel forgotPassCodePanel = new JPanel();
 
 	private JLabel title = new JLabel();
 	private JLabel background = new JLabel();
 	private JLabel code = new JLabel();
 
-	public static JTextField codeIn = new JTextField();
+	public static final JTextField codeIn = new JTextField();
 
-	public static JButton back = new JButton("Back");
-	public static JButton next = new JButton("Next");
+	public static final JButton back = new JButton("Back");
+	public static final JButton next = new JButton("Next");
 
 	public ForgotPassCodeInterface() {
 		forgotPassCodePanel.setSize(1080, 719);
@@ -58,7 +58,7 @@ public class ForgotPassCodeInterface {
 		forgotPassCodePanel.add(next);
 
 		background = new JLabel("");
-		background.setIcon(new ImageIcon("src//Images//Backgrounds//bank_background.jpg"));
+		background.setIcon(new ImageIcon("src//main//java//Images//Backgrounds//bank_background.jpg"));
 		background.setSize(1080, 720);
 		forgotPassCodePanel.add(background);
 

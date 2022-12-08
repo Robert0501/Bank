@@ -14,16 +14,16 @@ import javax.swing.SwingConstants;
 import app.ForgotPassword;
 
 public class ForgotPasswordInterface {
-	public static JPanel forgotPassPanel = new JPanel();
+	public static final JPanel forgotPassPanel = new JPanel();
 
 	private JLabel title = new JLabel();
 	private JLabel background = new JLabel();
 	private JLabel email = new JLabel();
 
-	public static JTextField emailIn = new JTextField();
+	public static final JTextField emailIn = new JTextField();
 
-	public static JButton back = new JButton("Back");
-	public static JButton next = new JButton("Next");
+	public static final JButton back = new JButton("Back");
+	public static final JButton next = new JButton("Next");
 
 	public ForgotPasswordInterface() {
 		forgotPassPanel.setSize(1080, 719);
@@ -60,7 +60,7 @@ public class ForgotPasswordInterface {
 		forgotPassPanel.add(next);
 
 		background = new JLabel("");
-		background.setIcon(new ImageIcon("src//Images//Backgrounds//bank_background.jpg"));
+		background.setIcon(new ImageIcon("src//Images//main//java//Backgrounds//bank_background.jpg"));
 		background.setSize(1080, 720);
 		forgotPassPanel.add(background);
 

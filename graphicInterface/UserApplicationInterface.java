@@ -27,10 +27,10 @@ import database.Database;
 public class UserApplicationInterface {
 	Font cardDetailFont = new Font("Tahoma", Font.BOLD, 22);
 
-	public static JFrame frame;
-	public static JPanel applicationPanel;
-	public static JPanel titlePanel;
-	public static JLabel amountTitle;
+	public static final JFrame frame = new JFrame("Revolve");
+	public static final JPanel applicationPanel = new JPanel();
+	public static final JPanel titlePanel = new JPanel();
+	public static final JLabel amountTitle = new JLabel("Amount: ");
 
 	private JPanel createNewCardButton;
 	private JPanel topUpButton;
@@ -42,16 +42,16 @@ public class UserApplicationInterface {
 	private JPanel changePinButton;
 	private JPanel logoutButton;
 
-	public static JPanel createNewCardPanel;
-	public static JPanel topUpPanel;
-	public static JPanel sendMoneyPanel;
-	public static JPanel payUtilitiesPanel;
-	public static JPanel lastTransactionsPanel;
-	public static JPanel accountDetailPanel;
-	public static JPanel printReceiptPanel;
-	public static JPanel changePinPanel;
-	public static JPanel logoutPanel;
-	public static JLabel title;
+	public static final JPanel createNewCardPanel = new JPanel();
+	public static final JPanel topUpPanel = new JPanel();
+	public static final JPanel sendMoneyPanel = new JPanel();
+	public static final JPanel payUtilitiesPanel = new JPanel();
+	public static final JPanel lastTransactionsPanel = new JPanel();
+	public static final JPanel accountDetailPanel = new JPanel();
+	public static final JPanel printReceiptPanel = new JPanel();
+	public static final JPanel changePinPanel = new JPanel();
+	public static final JPanel logoutPanel = new JPanel();
+	public static final JLabel title = new JLabel("Welcome ");
 
 	private JLabel createNewCard;
 	private JLabel topUp;
@@ -68,61 +68,63 @@ public class UserApplicationInterface {
 	private JLabel expirationDate;
 	private JLabel topUpAmount;
 	private JLabel recieverCard;
-	public static JTextField cardNumberIn;
-	public static JTextField cvvIn;
-	public static JTextField holderNameIn;
-	public static JTextField expirationDateIn;
-	public static JTextField topUpAmountIn;
+	public static final JTextField cardNumberIn = new JTextField();
+	public static final JTextField cvvIn = new JTextField();
+	public static final JTextField holderNameIn = new JTextField();
+	public static final JTextField expirationDateIn = new JTextField();
+	public static final JTextField topUpAmountIn = new JTextField();
 	@SuppressWarnings("rawtypes")
-	public static JComboBox cardsComboBox;
-	public static JButton topup;
+	public static final JComboBox cardsComboBox = new JComboBox();
+	public static final JButton topup = new JButton("Top up");
 
 	private JLabel sendMoneyCardNumber;
 	private JLabel sendMoneyAmount;
 	private JLabel recieverName;
 	private JLabel sendMoneyCurrencyChoose;
-	public static JTextField sendMoneyAmountIn;
-	public static JTextField sendMoneyCardNumberIn;
-	public static JTextField recieverNameIn;
-	public static JButton send;
+	public static final JTextField sendMoneyAmountIn = new JTextField();
+	public static final JTextField sendMoneyCardNumberIn = new JTextField();
+	public static final JTextField recieverNameIn = new JTextField();
+	public static final JButton send = new JButton("Send");
 	@SuppressWarnings("rawtypes")
-	public static JComboBox sendMoneyCardComboBox;
+	public static final JComboBox sendMoneyCardComboBox = new JComboBox();
 
 	private JLabel payUtilitiesAmount;
 	private JLabel provider;
 	private JLabel payUtilitiesChooseCard;
+	private static String[] utilities = { "Choose Provider", "Phone Provider", "Water Provider", "Gas Provider    " };
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static final JComboBox utilitiesBox = new JComboBox(utilities);
 	@SuppressWarnings("rawtypes")
-	public static JComboBox utilitiesBox;
-	@SuppressWarnings("rawtypes")
-	public static JComboBox payUtilitiesCardComboBox;
-	private String[] utilities = { "Choose Provider", "Phone Provider", "Water Provider", "Gas Provider    " };
-	public static JTextField payUtilitiesAmountIn;
-	public static JButton pay;
+	public static final JComboBox payUtilitiesCardComboBox = new JComboBox();
 
-	public static JPanel cardTypePanel;
-	public static JPanel cardTypeConfirmPanel;
-	public static JLabel cardType;
-	public static JLabel confirmLabel;
-	public static JLabel passwordLabel;
-	public static JLabel debitCard;
-	public static JLabel creditCard;
-	@SuppressWarnings("rawtypes")
-	public static JComboBox currencyBox;
-	private String[] currencyArray = { "Choose Currency", "RON", "EUR", "USD", "GBP" };
-	public static JPasswordField passwordIn;
+	public static final JTextField payUtilitiesAmountIn = new JTextField();
+	public static final JButton pay = new JButton("Pay");
+
+	public static final JPanel cardTypePanel = new JPanel();
+	public static final JPanel cardTypeConfirmPanel = new JPanel();
+	public static final JLabel cardType = new JLabel();
+	public static final JLabel confirmLabel = new JLabel();
+	public static final JLabel passwordLabel = new JLabel();
+	public static final JLabel debitCard = new JLabel();
+	public static final JLabel creditCard = new JLabel();
+	private static String[] currencyArray = { "Choose Currency", "RON", "EUR", "USD", "GBP" };
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static final JComboBox currencyBox = new JComboBox(currencyArray);
+
+	public static final JPasswordField passwordIn = new JPasswordField();
 
 	private JLabel accountDetailPassword;
-	public static JPasswordField accountDetailPasswordIn;
-	public static JButton accountDetailNextButton;
-	public static JPanel passwordAccountDetailPanel;
-	public static JPanel seeAccountDetailPanel;
+	public static final JPasswordField accountDetailPasswordIn = new JPasswordField();
+	public static final JButton accountDetailNextButton = new JButton("See Details");
+	public static final JPanel passwordAccountDetailPanel = new JPanel();
+	public static final JPanel seeAccountDetailPanel = new JPanel();
 
-	public static JButton confirmButton;
-	public static JButton backButton;
+	public static final JButton confirmButton = new JButton("Confirm");
+	public static final JButton backButton = new JButton("Back");
 
 	private JPanel panels[] = new JPanel[8];
 
-	public static int transactionNumber;
+	public static int transactionNumber = 0;
 	public static Transactions tranzactii[];
 	public static Card cards[];
 
@@ -138,17 +140,17 @@ public class UserApplicationInterface {
 	private JLabel newPin;
 	private JLabel changePinCard;
 
-	public static JPasswordField changePinPasswordIn;
-	public static JPasswordField oldPinIn;
-	public static JPasswordField newPinIn;
+	public static final JPasswordField changePinPasswordIn = new JPasswordField();
+	public static final JPasswordField oldPinIn = new JPasswordField();
+	public static final JPasswordField newPinIn = new JPasswordField();
 	@SuppressWarnings("rawtypes")
-	public static JComboBox changePinComboBox;
-	public static JButton change;
+	public static final JComboBox changePinComboBox = new JComboBox();
+	public static final JButton change = new JButton("Change PIN");
 
 	private JLabel saveToLabel;
-	public static JTextField browseIn;
-	public static JButton browseButton;
-	public static JButton print;
+	public static final JTextField browseIn = new JTextField();
+	public static final JButton browseButton = new JButton("Browse");
+	public static final JButton print = new JButton("Print");
 
 	private int width = 85;
 	public static int position;
@@ -191,7 +193,7 @@ public class UserApplicationInterface {
 
 	private void setBackground(JPanel panel) {
 		background = new JLabel();
-		background.setIcon(new ImageIcon("src//Images//Backgrounds//woodBackground.jpg"));
+		background.setIcon(new ImageIcon("src//main//java//Images//Backgrounds//woodBackground.jpg"));
 		background.setBounds(0, 0, 735, 895);
 		panel.add(background);
 	}
@@ -209,9 +211,7 @@ public class UserApplicationInterface {
 	}
 
 	private void frame() {
-		applicationPanel = new JPanel();
 		applicationPanel.setLayout(null);
-		frame = new JFrame("Revolve");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1080, 1025);
 		frame.setResizable(false);
@@ -250,20 +250,17 @@ public class UserApplicationInterface {
 	}
 
 	private void titlePanel() {
-		titlePanel = new JPanel();
 		titlePanel.setLayout(null);
 		titlePanel.setBounds(10, 10, 1045, 70);
 		titlePanel.setBackground(Color.black);
 		applicationPanel.add(titlePanel);
 
-		title = new JLabel("Welcome");
 		title.setBounds(40, 15, 1080, 30);
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		title.setFont(new Font("Tahoma", Font.BOLD, 35));
 		title.setForeground(Color.white);
 		titlePanel.add(title);
 
-		amountTitle = new JLabel("Amount: ");
 		amountTitle.setBounds(10, 35, 1080, 30);
 		amountTitle.setFont(new Font("Tahoma", Font.BOLD, 15));
 		amountTitle.setForeground(Color.white);
@@ -282,17 +279,14 @@ public class UserApplicationInterface {
 	}
 
 	private void createNewCardPanel() {
-		createNewCardPanel = new JPanel();
 		putPanels(createNewCardPanel);
 		putTitles(createNewCardPanel, createNewCard, "Choose Card Type");
 
-		cardTypePanel = new JPanel();
 		cardTypePanel.setLayout(null);
 		cardTypePanel.setVisible(false);
 		cardTypePanel.setBounds(0, 0, 735, 895);
 		createNewCardPanel.add(cardTypePanel);
 
-		cardTypeConfirmPanel = new JPanel();
 		cardTypeConfirmPanel.setLayout(null);
 		cardTypeConfirmPanel.setVisible(false);
 		cardTypeConfirmPanel.setBounds(0, 0, 735, 895);
@@ -300,44 +294,37 @@ public class UserApplicationInterface {
 	}
 
 	private void createTopUpPanel() {
-		topUpPanel = new JPanel();
 		putPanels(topUpPanel);
 		putTitles(topUpPanel, topUp, "Top-Up");
 	}
 
 	private void createSendMoneyPanel() {
-		sendMoneyPanel = new JPanel();
 		putPanels(sendMoneyPanel);
 		putTitles(sendMoneyPanel, sendMoney, "Send Money");
 	}
 
 	private void createPayUtilitesPanel() {
-		payUtilitiesPanel = new JPanel();
 		putPanels(payUtilitiesPanel);
 		putTitles(payUtilitiesPanel, payUtilites, "Pay Utilites");
 	}
 
 	private void createLastTransactionsPanel() {
-		lastTransactionsPanel = new JPanel();
 		putPanels(lastTransactionsPanel);
 		putTitles(lastTransactionsPanel, lastTransactions, "Last Transactions");
 		lastTransactionsPanel.setVisible(true);
 	}
 
 	private void createAccountDetailPanel() {
-		accountDetailPanel = new JPanel();
 		putPanels(accountDetailPanel);
 		putTitles(accountDetailPanel, accountDetail, "Account Details");
 	}
 
 	private void createPrinReceiptPanel() {
-		printReceiptPanel = new JPanel();
 		putPanels(printReceiptPanel);
 		putTitles(printReceiptPanel, printReceipt, "Print Receipt");
 	}
 
 	private void createChangePinPanel() {
-		changePinPanel = new JPanel();
 		putPanels(changePinPanel);
 		putTitles(changePinPanel, changePin, "Change PIN");
 	}
@@ -377,8 +364,7 @@ public class UserApplicationInterface {
 			}
 		});
 
-		debitCard = new JLabel();
-		debitCard.setIcon(new ImageIcon("src//Images//Images//debitCard.png"));
+		debitCard.setIcon(new ImageIcon("src//main//java//Images//Images//debitCard.png"));
 		debitCard.setBounds(192, 350, 350, 220);
 		debitCard.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cardTypePanel.add(debitCard);
@@ -391,18 +377,15 @@ public class UserApplicationInterface {
 			}
 		});
 
-		currencyBox = new JComboBox(currencyArray);
 		currencyBox.setBounds(267, 350, 200, 30);
 		cardTypeConfirmPanel.add(currencyBox);
 
-		passwordLabel = new JLabel();
 		passwordLabel.setBounds(100, 400, 200, 22);
 		passwordLabel.setText("Password");
 		passwordLabel.setForeground(Color.white);
 		passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 22));
 		cardTypeConfirmPanel.add(passwordLabel);
 
-		backButton = new JButton("Back");
 		backButton.setBounds(267, 450, 90, 25);
 		backButton.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
@@ -413,11 +396,9 @@ public class UserApplicationInterface {
 		});
 		cardTypeConfirmPanel.add(backButton);
 
-		confirmButton = new JButton("Confirm");
 		confirmButton.setBounds(377, 450, 90, 25);
 		cardTypeConfirmPanel.add(confirmButton);
 
-		passwordIn = new JPasswordField();
 		passwordIn.setBounds(267, 400, 200, 25);
 		cardTypeConfirmPanel.add(passwordIn);
 
@@ -440,7 +421,6 @@ public class UserApplicationInterface {
 		topUpAmount.setForeground(Color.white);
 		topUpPanel.add(topUpAmount);
 
-		topUpAmountIn = new JTextField();
 		topUpAmountIn.setBounds(300, 300, 250, 25);
 		topUpPanel.add(topUpAmountIn);
 
@@ -450,7 +430,6 @@ public class UserApplicationInterface {
 		cardNumber.setForeground(Color.white);
 		topUpPanel.add(cardNumber);
 
-		cardNumberIn = new JTextField();
 		cardNumberIn.setBounds(300, 385, 250, 25);
 		topUpPanel.add(cardNumberIn);
 
@@ -460,7 +439,6 @@ public class UserApplicationInterface {
 		cvv.setForeground(Color.white);
 		topUpPanel.add(cvv);
 
-		cvvIn = new JTextField();
 		cvvIn.setBounds(300, 460, 250, 25);
 		topUpPanel.add(cvvIn);
 
@@ -470,11 +448,9 @@ public class UserApplicationInterface {
 		expirationDate.setForeground(Color.white);
 		topUpPanel.add(expirationDate);
 
-		expirationDateIn = new JTextField();
 		expirationDateIn.setBounds(300, 545, 250, 25);
 		topUpPanel.add(expirationDateIn);
 
-		topup = new JButton("Top-Up");
 		topup.setBounds(320, 700, 100, 25);
 		topUpPanel.add(topup);
 
@@ -484,7 +460,6 @@ public class UserApplicationInterface {
 		recieverCard.setForeground(Color.white);
 		topUpPanel.add(recieverCard);
 
-		cardsComboBox = new JComboBox();
 		cardsComboBox.setBounds(300, 630, 250, 25);
 		topUpPanel.add(cardsComboBox);
 
@@ -505,7 +480,6 @@ public class UserApplicationInterface {
 		sendMoneyAmount.setForeground(Color.white);
 		sendMoneyPanel.add(sendMoneyAmount);
 
-		sendMoneyAmountIn = new JTextField();
 		sendMoneyAmountIn.setBounds(300, 300, 250, 25);
 		sendMoneyPanel.add(sendMoneyAmountIn);
 
@@ -515,7 +489,6 @@ public class UserApplicationInterface {
 		sendMoneyCardNumber.setForeground(Color.white);
 		sendMoneyPanel.add(sendMoneyCardNumber);
 
-		sendMoneyCardNumberIn = new JTextField();
 		sendMoneyCardNumberIn.setBounds(300, 385, 250, 25);
 		sendMoneyPanel.add(sendMoneyCardNumberIn);
 
@@ -525,7 +498,6 @@ public class UserApplicationInterface {
 		recieverName.setForeground(Color.white);
 		sendMoneyPanel.add(recieverName);
 
-		recieverNameIn = new JTextField();
 		recieverNameIn.setBounds(300, 460, 250, 25);
 		sendMoneyPanel.add(recieverNameIn);
 
@@ -535,11 +507,9 @@ public class UserApplicationInterface {
 		sendMoneyCurrencyChoose.setForeground(Color.white);
 		sendMoneyPanel.add(sendMoneyCurrencyChoose);
 
-		sendMoneyCardComboBox = new JComboBox();
 		sendMoneyCardComboBox.setBounds(300, 545, 250, 25);
 		sendMoneyPanel.add(sendMoneyCardComboBox);
 
-		send = new JButton("Send");
 		send.setBounds(320, 625, 100, 25);
 		sendMoneyPanel.add(send);
 
@@ -559,7 +529,6 @@ public class UserApplicationInterface {
 		payUtilitiesAmount.setForeground(Color.white);
 		payUtilitiesPanel.add(payUtilitiesAmount);
 
-		payUtilitiesAmountIn = new JTextField();
 		payUtilitiesAmountIn.setBounds(300, 385, 250, 25);
 		payUtilitiesPanel.add(payUtilitiesAmountIn);
 
@@ -569,7 +538,6 @@ public class UserApplicationInterface {
 		provider.setForeground(Color.white);
 		payUtilitiesPanel.add(provider);
 
-		utilitiesBox = new JComboBox(utilities);
 		utilitiesBox.setBounds(300, 460, 250, 25);
 		payUtilitiesPanel.add(utilitiesBox);
 
@@ -579,11 +547,9 @@ public class UserApplicationInterface {
 		payUtilitiesChooseCard.setForeground(Color.white);
 		payUtilitiesPanel.add(payUtilitiesChooseCard);
 
-		payUtilitiesCardComboBox = new JComboBox();
 		payUtilitiesCardComboBox.setBounds(300, 545, 250, 25);
 		payUtilitiesPanel.add(payUtilitiesCardComboBox);
 
-		pay = new JButton("Pay");
 		pay.setBounds(320, 625, 100, 25);
 		payUtilitiesPanel.add(pay);
 
@@ -643,7 +609,6 @@ public class UserApplicationInterface {
 			}
 		});
 
-		passwordAccountDetailPanel = new JPanel();
 		passwordAccountDetailPanel.setLayout(null);
 		passwordAccountDetailPanel.setVisible(true);
 		passwordAccountDetailPanel.setBounds(0, 0, 735, 895);
@@ -655,15 +620,12 @@ public class UserApplicationInterface {
 		accountDetailPassword.setForeground(Color.white);
 		passwordAccountDetailPanel.add(accountDetailPassword);
 
-		accountDetailPasswordIn = new JPasswordField();
 		accountDetailPasswordIn.setBounds(300, 385, 250, 25);
 		passwordAccountDetailPanel.add(accountDetailPasswordIn);
 
-		accountDetailNextButton = new JButton("See Details");
 		accountDetailNextButton.setBounds(350, 500, 100, 25);
 		passwordAccountDetailPanel.add(accountDetailNextButton);
 
-		seeAccountDetailPanel = new JPanel();
 		seeAccountDetailPanel.setLayout(null);
 		seeAccountDetailPanel.setVisible(false);
 		seeAccountDetailPanel.setBounds(0, 0, 735, 895);
@@ -748,7 +710,6 @@ public class UserApplicationInterface {
 		changePinPassword.setForeground(Color.white);
 		changePinPanel.add(changePinPassword);
 
-		changePinPasswordIn = new JPasswordField();
 		changePinPasswordIn.setBounds(300, 300, 250, 25);
 		changePinPanel.add(changePinPasswordIn);
 
@@ -758,7 +719,6 @@ public class UserApplicationInterface {
 		oldPin.setForeground(Color.white);
 		changePinPanel.add(oldPin);
 
-		oldPinIn = new JPasswordField();
 		oldPinIn.setBounds(300, 385, 250, 25);
 		changePinPanel.add(oldPinIn);
 
@@ -768,7 +728,6 @@ public class UserApplicationInterface {
 		newPin.setForeground(Color.white);
 		changePinPanel.add(newPin);
 
-		newPinIn = new JPasswordField();
 		newPinIn.setBounds(300, 460, 250, 25);
 		changePinPanel.add(newPinIn);
 
@@ -778,11 +737,9 @@ public class UserApplicationInterface {
 		changePinCard.setForeground(Color.white);
 		changePinPanel.add(changePinCard);
 
-		changePinComboBox = new JComboBox();
 		changePinComboBox.setBounds(300, 545, 250, 25);
 		changePinPanel.add(changePinComboBox);
 
-		change = new JButton("Change PIN");
 		change.setBounds(320, 615, 100, 25);
 		changePinPanel.add(change);
 
@@ -803,11 +760,9 @@ public class UserApplicationInterface {
 		saveToLabel.setForeground(Color.white);
 		printReceiptPanel.add(saveToLabel);
 
-		browseIn = new JTextField();
 		browseIn.setBounds(300, 400, 250, 25);
 		printReceiptPanel.add(browseIn);
 
-		browseButton = new JButton("Browse");
 		browseButton.setBounds(600, 400, 100, 25);
 		printReceiptPanel.add(browseButton);
 
@@ -819,7 +774,6 @@ public class UserApplicationInterface {
 			}
 		});
 
-		print = new JButton("Print");
 		print.setBounds(350, 500, 100, 25);
 		printReceiptPanel.add(print);
 

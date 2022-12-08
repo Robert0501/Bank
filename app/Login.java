@@ -35,6 +35,7 @@ public class Login {
 	private void loginDataCheck() {
 		// check by clicking login button
 		LoginInterface.loginButton.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				checkLoginData();
 			}
@@ -42,6 +43,7 @@ public class Login {
 
 		// check by clicking enter
 		LoginInterface.passwordIn.addKeyListener(new KeyAdapter() {
+			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					checkLoginData();
@@ -93,6 +95,7 @@ public class Login {
 
 	public void signUp() {
 		LoginInterface.signUp.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				LoginInterface.loginPanel.setVisible(false);
 				new RegisterInterface();

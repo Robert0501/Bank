@@ -18,10 +18,12 @@ import card.Transactions;
 import graphicInterface.LoginInterface;
 import graphicInterface.UserApplicationInterface;
 
-public class Database {
+public class Database implements DatabaseInterface{
 	static Connection connection = null;
 	static Statement statement = null;
 	static ResultSet rs = null;
+	
+	
 
 	public Database() {
 		connectDB();
@@ -37,8 +39,8 @@ public class Database {
 	public static void connectDB() {
 		try {
 			Class.forName("org.postgresql.Driver");
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Revolve", "postgres",
-					"Laurentiu02");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Revolve", username,
+					password);
 			if (connection == null) {
 				JOptionPane.showMessageDialog(LoginInterface.loginPanel, "Something went wrong.Please try again");
 				System.exit(0);

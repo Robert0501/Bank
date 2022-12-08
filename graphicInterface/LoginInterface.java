@@ -18,20 +18,20 @@ import database.Database;
 
 public class LoginInterface {
 
-	public static JPanel loginPanel;
-	public static JFrame frame;
+	public static final JPanel loginPanel = new JPanel();
+	public static final JFrame frame = new JFrame("Login");
 
 	private JLabel title;
 	private JLabel background;
 	private JLabel username;
 	private JLabel password;
 	private JLabel createAccount;
-	public static JLabel signUp;
+	public static final JLabel signUp = new JLabel("Click here!");
 
-	public static JTextField usernameIn;
-	public static JPasswordField passwordIn;
+	public static final JTextField usernameIn = new JTextField();
+	public static final JPasswordField passwordIn = new JPasswordField();
 
-	public static JButton loginButton;
+	public static final JButton loginButton = new JButton("Login");
 
 	public LoginInterface() {
 
@@ -54,10 +54,8 @@ public class LoginInterface {
 	}
 
 	private void frame() {
-		loginPanel = new JPanel();
 		loginPanel.setLayout(null);
 		loginPanel.setVisible(true);
-		frame = new JFrame("Login");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1080, 719);
 		frame.setResizable(false);
@@ -81,7 +79,7 @@ public class LoginInterface {
 
 	private void background() {
 		background = new JLabel("");
-		background.setIcon(new ImageIcon(("src//Images//Backgrounds//bank_background.jpg")));
+		background.setIcon(new ImageIcon(("src//main//java//Images//Backgrounds//bank_background.jpg")));
 		background.setBounds(0, 0, 1080, 720);
 	}
 
@@ -110,18 +108,15 @@ public class LoginInterface {
 	}
 
 	private void insertUsername() {
-		usernameIn = new JTextField();
 		usernameIn.setBounds(390, 250, 300, 30);
 		usernameIn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 	}
 
 	private void insertPassword() {
-		passwordIn = new JPasswordField();
 		passwordIn.setBounds(390, 420, 300, 30);
 	}
 
 	private void loginButton() {
-		loginButton = new JButton("Login");
 		loginButton.setBounds(450, 480, 180, 30);
 		loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	}
@@ -131,7 +126,6 @@ public class LoginInterface {
 		createAccount.setBounds(450, 500, 118, 50);
 		createAccount.setForeground(Color.white);
 
-		signUp = new JLabel("Click here!");
 		signUp.setBounds(568, 512, 50, 26);
 		signUp.setForeground(Color.decode("#febc01"));
 		signUp.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

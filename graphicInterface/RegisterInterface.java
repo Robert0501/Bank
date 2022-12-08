@@ -22,10 +22,10 @@ public class RegisterInterface {
 	public static Font textFont;
 	public static Font titleLabelFont;
 
-	public static JPanel personalDataPanel;
-	public static JPanel birthdayPanel;
-	public static JPanel loginDataPanel;
-	public static JPanel addressPanel;
+	public static final JPanel personalDataPanel = new JPanel();
+	public static final JPanel birthdayPanel = new JPanel();
+	public static final JPanel loginDataPanel = new JPanel();
+	public static final JPanel addressPanel = new JPanel();
 
 	private JLabel personalData;
 	private JLabel firstName;
@@ -33,10 +33,10 @@ public class RegisterInterface {
 	private JLabel cnp;
 	private JLabel phoneNumber;
 
-	public static JTextField firstNameIn;
-	public static JTextField lastNameIn;
-	public static JTextField cnpIn;
-	public static JTextField phoneNumberIn;
+	public static final JTextField firstNameIn = new JTextField();
+	public static final JTextField lastNameIn = new JTextField();
+	public static final JTextField cnpIn = new JTextField();
+	public static final JTextField phoneNumberIn = new JTextField();
 
 	private JLabel addressLabel;
 	private JLabel country;
@@ -44,10 +44,10 @@ public class RegisterInterface {
 	private JLabel street;
 	private JLabel number;
 
-	public static JTextField countryIn;
-	public static JTextField cityIn;
-	public static JTextField streetIn;
-	public static JTextField numberIn;
+	public static final JTextField countryIn = new JTextField();
+	public static final JTextField cityIn = new JTextField();
+	public static final JTextField streetIn = new JTextField();
+	public static final JTextField numberIn = new JTextField();
 
 	private JLabel dateOfBirth;
 	private JLabel day;
@@ -61,8 +61,8 @@ public class RegisterInterface {
 	public static JComboBox monthComboBox;
 	@SuppressWarnings("rawtypes")
 	public static JComboBox yearComboBox;
-	public static JRadioButton male;
-	public static JRadioButton female;
+	public static JRadioButton male = new JRadioButton("Male");
+	public static JRadioButton female = new JRadioButton("Female");
 
 	private JLabel loginData;
 	private JLabel username;
@@ -70,29 +70,29 @@ public class RegisterInterface {
 	private JLabel rePassword;
 	private JLabel email;
 
-	public static JTextField usernameIn;
-	public static JTextField emailIn;
-	public static JPasswordField passwordIn;
-	public static JPasswordField rePasswordIn;
+	public static final JTextField usernameIn = new JTextField();
+	public static final JTextField emailIn = new JTextField();
+	public static final JPasswordField passwordIn = new JPasswordField();
+	public static final JPasswordField rePasswordIn = new JPasswordField();
 
 	private String[] dayChooses = new String[32];
 	private String[] monthChooses = { "Month", "January", "February", "March", "April", "May", "June", "July", "August",
 			"September", "October", "November", "December" };
 	private String[] yearChooses = new String[73];
 
-	public static ButtonGroup genderGroup;
+	public static final ButtonGroup genderGroup = new ButtonGroup();
 
 	private JLabel background;
 
-	public static JButton personalDataPanelNextButton;
-	public static JButton addressPanelNextButton;
-	public static JButton birthdayPanelNextButton;
-	public static JButton loginDataNextButton;
+	public static final JButton personalDataPanelNextButton = new JButton("Next");
+	public static final JButton addressPanelNextButton = new JButton("Next");
+	public static final JButton birthdayPanelNextButton = new JButton("Next");
+	public static final JButton loginDataNextButton = new JButton("Finish");
 
-	public static JButton personalDataPanelBackButton;
-	public static JButton addressPanelBackButton;
-	public static JButton birthdayPanelBackButton;
-	public static JButton loginDataBackButton;
+	public static final JButton personalDataPanelBackButton = new JButton("Back");
+	public static final JButton addressPanelBackButton = new JButton("Back");
+	public static final JButton birthdayPanelBackButton = new JButton("Back");
+	public static final JButton loginDataBackButton = new JButton("Back");
 
 	private void putPanel(JPanel panel) {
 		panel.setLayout(null);
@@ -110,11 +110,6 @@ public class RegisterInterface {
 
 		LoginInterface.frame.setTitle("Register");
 
-		addressPanel = new JPanel();
-
-		personalDataPanel = new JPanel();
-		birthdayPanel = new JPanel();
-		loginDataPanel = new JPanel();
 		putPanel(personalDataPanel);
 		putPanel(addressPanel);
 		putPanel(birthdayPanel);
@@ -129,7 +124,6 @@ public class RegisterInterface {
 		firstName.setBounds(600, 250, 150, 25);
 		firstName.setFont(labelFont);
 
-		firstNameIn = new JTextField();
 		firstNameIn.setBounds(750, 250, 250, 25);
 		firstNameIn.setFont(textFont);
 		firstNameIn.setBackground(Color.LIGHT_GRAY);
@@ -139,7 +133,6 @@ public class RegisterInterface {
 		lastName.setBounds(600, 300, 150, 25);
 		lastName.setFont(labelFont);
 
-		lastNameIn = new JTextField();
 		lastNameIn.setBounds(750, 300, 250, 25);
 		lastNameIn.setFont(textFont);
 		lastNameIn.setBackground(Color.decode("#DFDFE2"));
@@ -148,7 +141,6 @@ public class RegisterInterface {
 		cnp.setBounds(600, 350, 150, 25);
 		cnp.setFont(labelFont);
 
-		cnpIn = new JTextField();
 		cnpIn.setBounds(750, 350, 250, 25);
 		cnpIn.setFont(textFont);
 		cnpIn.setBackground(Color.decode("#DFDFE2"));
@@ -157,20 +149,17 @@ public class RegisterInterface {
 		phoneNumber.setBounds(600, 400, 150, 25);
 		phoneNumber.setFont(labelFont);
 
-		phoneNumberIn = new JTextField();
 		phoneNumberIn.setBounds(750, 400, 250, 25);
 		phoneNumberIn.setFont(textFont);
 		phoneNumberIn.setBackground(Color.decode("#DFDFE2"));
 
 		background = new JLabel("");
-		background.setIcon(new ImageIcon("src//Images//Backgrounds//cards.jpg"));
+		background.setIcon(new ImageIcon("src//main//java//Images//Backgrounds//cards.jpg"));
 		background.setSize(1080, 720);
 
-		personalDataPanelBackButton = new JButton("Back");
 		personalDataPanelBackButton.setBounds(650, 500, 150, 30);
 		personalDataPanelBackButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-		personalDataPanelNextButton = new JButton("Next");
 		personalDataPanelNextButton.setBounds(850, 500, 150, 30);
 		personalDataPanelNextButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
@@ -195,7 +184,6 @@ public class RegisterInterface {
 		country.setBounds(600, 250, 150, 25);
 		country.setFont(RegisterInterface.labelFont);
 
-		countryIn = new JTextField();
 		countryIn.setBounds(750, 250, 250, 25);
 		countryIn.setFont(RegisterInterface.textFont);
 		countryIn.setBackground(Color.decode("#DFDFE2"));
@@ -204,7 +192,6 @@ public class RegisterInterface {
 		city.setBounds(600, 300, 150, 25);
 		city.setFont(RegisterInterface.labelFont);
 
-		cityIn = new JTextField();
 		cityIn.setBounds(750, 300, 250, 25);
 		cityIn.setFont(RegisterInterface.textFont);
 		cityIn.setBackground(Color.decode("#DFDFE2"));
@@ -213,7 +200,6 @@ public class RegisterInterface {
 		street.setBounds(600, 350, 150, 25);
 		street.setFont(RegisterInterface.labelFont);
 
-		streetIn = new JTextField();
 		streetIn.setBounds(750, 350, 250, 25);
 		streetIn.setFont(RegisterInterface.textFont);
 		streetIn.setBackground(Color.decode("#DFDFE2"));
@@ -222,20 +208,17 @@ public class RegisterInterface {
 		number.setBounds(600, 400, 150, 25);
 		number.setFont(RegisterInterface.labelFont);
 
-		numberIn = new JTextField();
 		numberIn.setBounds(750, 400, 250, 25);
 		numberIn.setFont(RegisterInterface.textFont);
 		numberIn.setBackground(Color.decode("#DFDFE2"));
 
 		background = new JLabel("");
-		background.setIcon(new ImageIcon("src//Images//Backgrounds//cards.jpg"));
+		background.setIcon(new ImageIcon("src//main//java//Images//Backgrounds//cards.jpg"));
 		background.setSize(1080, 720);
 
-		addressPanelBackButton = new JButton("Back");
 		addressPanelBackButton.setBounds(650, 500, 150, 30);
 		addressPanelBackButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-		addressPanelNextButton = new JButton("Next");
 		addressPanelNextButton.setBounds(850, 500, 150, 30);
 		addressPanelNextButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
@@ -291,29 +274,24 @@ public class RegisterInterface {
 		yearComboBox.setBounds(750, 350, 250, 25);
 
 		background = new JLabel("");
-		background.setIcon(new ImageIcon("src//Images//Backgrounds//cards.jpg"));
+		background.setIcon(new ImageIcon("src//main//java//Images//Backgrounds//cards.jpg"));
 		background.setSize(1080, 720);
 
 		gender = new JLabel("Gender");
 		gender.setBounds(600, 400, 150, 25);
 		gender.setFont(RegisterInterface.labelFont);
 
-		male = new JRadioButton("Male");
 		male.setBounds(750, 400, 125, 25);
 		male.setBackground(Color.decode("#DFDFE2"));
-		female = new JRadioButton("Female");
 		female.setBounds(875, 400, 125, 25);
 		female.setBackground(Color.decode("#DFDFE2"));
 
-		genderGroup = new ButtonGroup();
 		genderGroup.add(male);
 		genderGroup.add(female);
 
-		birthdayPanelBackButton = new JButton("Back");
 		birthdayPanelBackButton.setBounds(650, 500, 150, 30);
 		birthdayPanelBackButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-		birthdayPanelNextButton = new JButton("Next");
 		birthdayPanelNextButton.setBounds(850, 500, 150, 30);
 		birthdayPanelNextButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
@@ -339,7 +317,6 @@ public class RegisterInterface {
 		username.setBounds(600, 250, 150, 25);
 		username.setFont(RegisterInterface.labelFont);
 
-		usernameIn = new JTextField();
 		usernameIn.setBounds(750, 250, 250, 25);
 		usernameIn.setFont(RegisterInterface.textFont);
 		usernameIn.setBackground(Color.decode("#DFDFE2"));
@@ -348,7 +325,6 @@ public class RegisterInterface {
 		email.setBounds(600, 300, 150, 25);
 		email.setFont(RegisterInterface.labelFont);
 
-		emailIn = new JTextField();
 		emailIn.setBounds(750, 300, 250, 25);
 		emailIn.setFont(RegisterInterface.textFont);
 		emailIn.setBackground(Color.decode("#DFDFE2"));
@@ -357,7 +333,6 @@ public class RegisterInterface {
 		password.setBounds(600, 350, 150, 25);
 		password.setFont(RegisterInterface.labelFont);
 
-		passwordIn = new JPasswordField();
 		passwordIn.setBounds(750, 350, 250, 25);
 		passwordIn.setFont(RegisterInterface.textFont);
 		passwordIn.setBackground(Color.decode("#DFDFE2"));
@@ -366,20 +341,17 @@ public class RegisterInterface {
 		rePassword.setBounds(600, 400, 150, 25);
 		rePassword.setFont(RegisterInterface.labelFont);
 
-		rePasswordIn = new JPasswordField();
 		rePasswordIn.setBounds(750, 400, 250, 25);
 		rePasswordIn.setFont(RegisterInterface.textFont);
 		rePasswordIn.setBackground(Color.decode("#DFDFE2"));
 
 		background = new JLabel("");
-		background.setIcon(new ImageIcon("src//Images//Backgrounds//cards.jpg"));
+		background.setIcon(new ImageIcon("src//main//java//Images//Backgrounds//cards.jpg"));
 		background.setSize(1080, 720);
 
-		loginDataBackButton = new JButton("Back");
 		loginDataBackButton.setBounds(650, 500, 150, 30);
 		loginDataBackButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-		loginDataNextButton = new JButton("Finish");
 		loginDataNextButton.setBounds(850, 500, 150, 30);
 		loginDataNextButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 

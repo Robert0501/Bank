@@ -122,15 +122,15 @@ public class Card {
 	}
 
 	private static String generateNrCard() {
-		Random rand = new Random();
+	
 		long number = 4;
 		long nr;
 
 		number = 4;
 		while (nrDigits(number) != 16) {
-			nr = rand.nextInt() % 9;
+			nr = ForgotPassword.rand.nextInt() % 9;
 			while (nr < 0)
-				nr = rand.nextInt() % 9;
+				nr = ForgotPassword.rand.nextInt() % 9;
 			number = number * 10 + nr;
 		}
 		if (number < 0)
@@ -151,9 +151,9 @@ public class Card {
 
 	public static int generateCVV() {
 		int number = -1;
-		Random rand = new Random();
+		
 		do {
-			number = rand.nextInt() % 1000;
+			number = ForgotPassword.rand.nextInt() % 1000;
 		} while (number < 0 || ForgotPassword.digits(number) != 3);
 		return number;
 	}
@@ -168,9 +168,9 @@ public class Card {
 
 	public static int generatePin() {
 		int pin = 0;
-		Random rand = new Random();
+		
 		do {
-			pin = rand.nextInt() % 10000;
+			pin = ForgotPassword.rand.nextInt() % 10000;
 		} while (pin < 0 || ForgotPassword.digits(pin) != 4);
 		return pin;
 	}

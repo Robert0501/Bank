@@ -19,6 +19,7 @@ import regex.RegEx;
 public class ForgotPassword {
 
 	public static int code;
+	public static Random rand = new Random();
 
 	EmailThread codeEmail[] = new EmailThread[10];
 	int codeEmailCounter = 0;
@@ -39,6 +40,7 @@ public class ForgotPassword {
 
 	private void backButton() {
 		ForgotPasswordInterface.back.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				ForgotPasswordInterface.forgotPassPanel.setVisible(false);
 				LoginInterface.loginPanel.setVisible(true);
@@ -47,6 +49,7 @@ public class ForgotPassword {
 		});
 
 		ForgotPassCodeInterface.back.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				ForgotPassCodeInterface.forgotPassCodePanel.setVisible(false);
 				LoginInterface.loginPanel.setVisible(true);
@@ -55,6 +58,7 @@ public class ForgotPassword {
 		});
 
 		ChangePasswordInterface.back.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				ChangePasswordInterface.changePasswordPanel.setVisible(false);
 				LoginInterface.loginPanel.setVisible(true);
@@ -86,12 +90,14 @@ public class ForgotPassword {
 
 	private void nextButtonToCode() {
 		ForgotPasswordInterface.next.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				checkEmail();
 			}
 		});
 
 		ForgotPasswordInterface.emailIn.addKeyListener(new KeyAdapter() {
+			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					checkEmail();
@@ -112,12 +118,14 @@ public class ForgotPassword {
 
 	private void nextButtonToChangePassword() {
 		ForgotPassCodeInterface.next.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				checkCode();
 			}
 		});
 
 		ForgotPassCodeInterface.codeIn.addKeyListener(new KeyAdapter() {
+			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					checkCode();
@@ -160,12 +168,14 @@ public class ForgotPassword {
 
 	private void changePasswordButton() {
 		ChangePasswordInterface.change.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				checkEnteredPassword();
 			}
 		});
 
 		ChangePasswordInterface.rePasswordIn.addKeyListener(new KeyAdapter() {
+			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					checkEnteredPassword();
@@ -176,7 +186,7 @@ public class ForgotPassword {
 
 	private static int generateChangePassCode() {
 		int code = -1;
-		Random rand = new Random();
+		
 		while (code < 0 || digits(code) != 6) {
 			code = rand.nextInt() % 1000000;
 		}

@@ -12,18 +12,18 @@ import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
 
 public class ChangePasswordInterface {
-	public static JPanel changePasswordPanel = new JPanel();
+	public static final JPanel changePasswordPanel = new JPanel();
 
 	private JLabel title = new JLabel();
 	private JLabel background = new JLabel();
 	private JLabel password = new JLabel();
 	private JLabel rePassword = new JLabel();
 
-	public static JPasswordField passwordIn = new JPasswordField();
-	public static JPasswordField rePasswordIn = new JPasswordField();
+	public static final JPasswordField passwordIn = new JPasswordField();
+	public static final JPasswordField rePasswordIn = new JPasswordField();
 
-	public static JButton back = new JButton("Back");
-	public static JButton change = new JButton("Change Password");
+	public static final JButton back = new JButton("Back");
+	public static final JButton change = new JButton("Change Password");
 
 	public ChangePasswordInterface() {
 		changePasswordPanel.setSize(1080, 719);
@@ -72,7 +72,7 @@ public class ChangePasswordInterface {
 		changePasswordPanel.add(change);
 
 		background = new JLabel("");
-		background.setIcon(new ImageIcon("src//Images//Backgrounds//bank_background.jpg"));
+		background.setIcon(new ImageIcon("src//main//java//Images//Backgrounds//bank_background.jpg"));
 		background.setSize(1080, 720);
 		changePasswordPanel.add(background);
 
